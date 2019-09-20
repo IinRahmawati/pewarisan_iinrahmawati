@@ -1,0 +1,43 @@
+class Bapak(object):
+    def __init__(self, nama, tinggi, berat):
+        self.nama = nama
+        self.tinggi = tinggi
+        self.berat = berat
+
+    def berjalan(self):
+        print("Berjalan ke depan")
+
+    def berlari(self):
+        print("Berlari dengan cepat")
+
+
+# class Anak turunan dari class Bapak
+class Anak(Bapak):
+    def __init__(self, nama, tinggi, berat, gender):
+        # memanggil construktor super class
+        super().__init__(nama, tinggi, berat)
+        # property tambahan
+        self.gender = gender
+
+    def berenang(self):
+        print("Berenang Gaya Kupu-kupu")
+
+
+b = Bapak("dinra", 180, 65)
+print()
+print("Nama:", b.nama)
+print("Tinggi:", b.tinggi, "cm")
+print("Berat:", b.berat, "kg")
+b.berjalan()
+b.berlari()
+
+# objek dari class Anak memiliki seluruh yang dimiliki class Bapak dan ditambah property dan method pada dirinya sendiri
+a = Anak("wahyudi", 170, 17, "Pria")
+print()
+print("Nama:", a.nama)
+print("Tinggi:", a.tinggi, "cm")
+print("Berat:", a.berat, "kg")
+print("Gender:", a.gender)
+a.berjalan()
+a.berlari()
+a.berenang()
